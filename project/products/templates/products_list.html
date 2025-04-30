@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Ombordagi mahsulotlar</h1>
+<ul>
+  {% for product in products %}
+    <li><a href="{{ product.id }}/">{{ product.name }} - ${{ product.price }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

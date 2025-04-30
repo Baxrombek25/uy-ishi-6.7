@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>GPA 3.0 dan yuqori talabalar</h1>
+<ul>
+  {% for student in students %}
+    <li><a href="{{ student.id }}/">{{ student.name }} - GPA: {{ student.gpa }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

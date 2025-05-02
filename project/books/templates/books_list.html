@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
-{% block content %}
-<h1>Kitoblar ro'yxati</h1>
+ {% block content %}
+<h1>Kitoblar ro'yxati (CBV)</h1>
+<a href="{% url 'book-create' %}">Yangi kitob qo‘shish</a>
 <ul>
   {% for book in books %}
-    <li><a href="{{ book.id }}/">{{ book.title }} by {{ book.author }}</a></li>
+    <li>
+      <a href="{% url 'book-detail' book.pk %}">{{ book.title }}</a>
+      <a href="{% url 'book-update' book.pk %}">Tahrirlash</a>
+      <a href="{% url 'book-delete' book.pk %}">O‘chirish</a>
+    </li>
   {% endfor %}
 </ul>
 {% endblock %}

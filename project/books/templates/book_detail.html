@@ -1,6 +1,8 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 {% block content %}
 <h1>{{ book.title }}</h1>
 <p>Muallif: {{ book.author }}</p>
 <p>{{ book.description }}</p>
+<a href="{% url 'book-update' book.pk %}">Tahrirlash</a>
+<a href="{% url 'book-delete' book.pk %}">O‘chirish</a>
 {% endblock %}
